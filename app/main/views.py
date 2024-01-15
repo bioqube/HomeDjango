@@ -2,7 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'main/index.html')
+    context = {
+        'title' : 'Главная страница',
+        'content' : 'Магазин мебели HOME',
+    }
+    return render(request, 'main/index.html', context)
 
 def about(request):
-    return render(request, 'main/about.html')
+    context = {
+        'title' : 'О нас',
+        'content' : 'Текст о том какой классный этот интернет магазин.',
+    }
+    return render(request, 'main/about.html', context)
